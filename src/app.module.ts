@@ -26,7 +26,7 @@ import { Attendance } from './modules/admin/attendances/entities/attendance.enti
       isGlobal: true, // Hace que el .env esté disponible en AuthModule y la DB sin importarlo de nuevo
     }),
 
-    // Configuración de la DB AWS (ahora leerá los process.env de forma segura)
+    // Configuración de la DB AWS (ahora leerá los process.env de forma segura) //////
     TypeOrmModule.forRoot({
       type: "postgres",
       host: process.env.DB_HOST,
@@ -42,7 +42,7 @@ import { Attendance } from './modules/admin/attendances/entities/attendance.enti
         Vacation,
         Attendance,
       ],
-      synchronize: true,
+      synchronize: false,
       ssl: {
         rejectUnauthorized: false
       }
